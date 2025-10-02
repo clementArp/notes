@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Notes</title>
+    <link rel="stylesheet" href="/static/base.css">
+</head>
+
+<body>
+    <h1>Mes notes</h1>
+    <ul>
+        {% for n in notes %}
+        <li><strong>{{ n.title }}</strong> — {{ n.created_at|date:"Y-m-d H:i" }}<br>{{ n.body|linebreaksbr }}</li>
+        {% empty %}
+        <li>Aucune note pour l'instant.</li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>
